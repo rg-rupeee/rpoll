@@ -1,28 +1,45 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const pollSchema = new mongoose.Schema({
-  questions: {
-    type: String,
+const pollSchema = new mongoose.Schema(
+  {
+    questions: {
+      type: String,
+      trim: true,
+      requied: true,
+    },
+    noOptions: {
+      type: Number,
+      requied: true,
+    },
+    options: [
+      {
+        type: String,
+        trim: true,
+      },
+    ],
+    voteCnt: {
+      type: Number,
+      requied: true,
+      default: 0,
+    },
+    votes: [
+      {
+        type: Number,
+        default: 0,
+      },
+    ],
+    uuid: {
+      type: String,
+      requied: true,
+    },
+    creater: {
+      type: String,
+      trim: true,
+      required: true,
+    },
   },
-  noOptions: {  
-    type: Number,
-  }, 
-  options: [{
-    type: String,
-  }],
-  voteCnt: {
-    type: Number,
-  },  
-  votes: [{
-    type: Number,
-  }], 
-  uuid: {
-    type: String
-  },
-  creater: {
-    type: String
-  }
-}, {timestamps: true});
+  { timestamps: true }
+);
 
-const pollModel = mongoose.model('pollModel', pollSchema);
+const pollModel = mongoose.model("pollModel", pollSchema);
 module.exports = pollModel;
