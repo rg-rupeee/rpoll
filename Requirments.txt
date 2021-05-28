@@ -1,0 +1,4 @@
+1. Create Poll
+2. Share Poll
+3. Vote
+4. Show Answers

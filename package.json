@@ -1,0 +1,21 @@
+{
+  "name": "rpoll",
+  "version": "1.0.0",
+  "description": "Create your polls and share to see answers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "nodemon server.js"
+  },
+  "keywords": [
+    "poll",
+    "share"
+  ],
+  "author": "Rupesh Garhwal <rupeshgarhwal3920@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.12"
+  }
+}
