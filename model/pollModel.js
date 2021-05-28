@@ -7,15 +7,15 @@ const pollSchema = new mongoose.Schema({
   noOptions: {  
     type: Number,
   }, 
-  options: {
-    type: [String],
-  },
+  options: [{
+    type: String,
+  }],
   voteCnt: {
     type: Number,
   },  
-  votes: {
-    type: [Number],
-  }, 
+  votes: [{
+    type: Number,
+  }], 
   uuid: {
     type: String
   },
