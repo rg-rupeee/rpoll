@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const pollSchema = new mongoose.Schema(
   {
-    questions: {
+    question: {
       type: String,
       trim: true,
       requied: true,
@@ -24,22 +24,23 @@ const pollSchema = new mongoose.Schema(
     },
     votes: [
       {
-        type: Number,
-        default: 0,
+        type: Number, 
       },
     ],
-    uuid: {
-      type: String,
-      requied: true,
-    },
     creater: {
       type: String,
       trim: true,
       required: true,
     },
+    uuid: {
+      type: String,
+      requied: true,
+    },
   },
   { timestamps: true }
 );
 
-const pollModel = mongoose.model("pollModel", pollSchema);
-module.exports = pollModel;
+pollSchema.index({uuid: 1});
+
+const Poll = mongoose.model("Poll", pollSchema);
+module.exports = Poll;
