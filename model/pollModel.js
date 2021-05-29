@@ -24,7 +24,7 @@ const pollSchema = new mongoose.Schema(
     },
     votes: [
       {
-        type: Number, 
+        type: Number,
       },
     ],
     creater: {
@@ -40,7 +40,7 @@ const pollSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-pollSchema.index({uuid: 1});
+pollSchema.index({ uuid: 1 });
 
 const Poll = mongoose.model("Poll", pollSchema);
 module.exports = Poll;
