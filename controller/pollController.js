@@ -30,6 +30,22 @@ exports.createPoll = async (req, res) => {
   }
 };
 
-exports.getPoll = async (req, res) => {};
+exports.getPoll = async (req, res) => {
+  try{
+    // console.log(req.params.uuid);
+    const poll = await Poll.findOne({uuid: req.params.uuid});
+    return res.json({
+      status: 'success',
+      data: poll
+    })
+  }
+  catch(err){
+    console.log(err);
+    return res.json({
+      status: "fail",
+      data: err,
+    });
+  }
+};
 
 exports.vote = async (req, res) => {};
