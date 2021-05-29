@@ -1,5 +1,6 @@
 const Poll = require("./../model/pollModel");
 const { v4: uuid } = require("uuid");
+const { update } = require("./../model/pollModel");
 
 exports.createPoll = async (req, res) => {
   try {
@@ -31,15 +32,14 @@ exports.createPoll = async (req, res) => {
 };
 
 exports.getPoll = async (req, res) => {
-  try{
+  try {
     // console.log(req.params.uuid);
-    const poll = await Poll.findOne({uuid: req.params.uuid});
+    const poll = await Poll.findOne({ uuid: req.params.uuid });
     return res.json({
-      status: 'success',
-      data: poll
-    })
-  }
-  catch(err){
+      status: "success",
+      data: poll,
+    });
+  } catch (err) {
     console.log(err);
     return res.json({
       status: "fail",
@@ -48,4 +48,44 @@ exports.getPoll = async (req, res) => {
   }
 };
 
-exports.vote = async (req, res) => {};
+exports.vote = async (req, res) => {
+  try {
+    const op = parseInt(req.query.vote);
+    console.log(op);
+
+    const poll = await Poll.findOne({ uuid: req.params.uuid });
+
+    // check if op is in range
+    if (op < 0 || op >= poll.noOptions) {
+      return res.json({
+        status: "fail",
+        message: "option you have chosen is not defined",
+      });
+    }
+
+    poll.votes[op] = poll.votes[op] + 1;
+    poll.voteCnt = poll.voteCnt + 1;
+    // increment voteCnt and vote of op option
+    const updatedPoll = await Poll.findOneAndUpdate(
+      { uuid: poll.uuid },
+      {
+        voteCnt: poll.voteCnt,
+        votes: poll.votes,
+      },
+      { new: true }
+    );
+
+    console.log(poll);
+
+    return res.json({
+      status: "success",
+      data: updatedPoll,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.json({
+      status: "fail",
+      data: err,
+    });
+  }
+};
