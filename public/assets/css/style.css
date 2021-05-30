@@ -1,12 +1,14 @@
-:root{
+:root {
   --primary: #202020;
-  --secondary: #FFDF6C;
-  --tertiary: #3F3F3F;
+  --secondary: #ffdf6c;
+  --tertiary: #3f3f3f;
   --quaternary: #707070;
-  --white: #FFFFFF;
+  --white: #ffffff;
+  --whiteSec: #fafafa;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: var(--white);
   background: var(--quaternary);
 }
@@ -16,12 +18,12 @@
   background: var(--quaternary);
 }
 
-body{
-  background-color: var(--white);
-  font-family: 'Poppins', sans-serif;
+body {
+  background-color: var(--whiteSec);
+  font-family: "Poppins", sans-serif;
 }
 
-.main-header{
+.main-header {
   background-color: var(--primary);
   padding-top: 12vh;
   box-shadow: 3px 3px 5px var(--quaternary);
@@ -29,43 +31,61 @@ body{
   padding-bottom: 8vh;
 }
 
-.main-title{
+.main-title {
   font-weight: 800;
   color: var(--white);
 }
 
-.main-btn{
+.main-btn {
   background-color: var(--secondary);
   color: var(--primary);
   border: 1px solid var(--secondary);
   font-weight: 600;
 }
 
-.main-btn:hover{
+.main-btn:hover {
   border: 1px solid var(--quaternary);
   color: var(--quaternary);
 }
 
-.main-subtitle{
+.main-subtitle {
   color: var(--quaternary);
 }
 
-.page-wrapper{
-  height: 100vh;
+.form-heading{
+  font-weight: 700;
 }
 
-.main-footer{
+.form-subtitle{
+  color: var(--quaternary);
+}
+
+.form-label{
+  color: var(--quaternary);
+  font-weight: 500;
+}
+
+.main-footer {
   background-color: var(--quaternary);
 }
 
-.github-icon{
+.github-icon {
   border-radius: 50%;
 }
 
-.github-icon:hover{
+.github-icon:hover {
   background-color: var(--secondary);
 }
 
-.github-project{
+.github-project {
   color: var(--tertiary);
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .page-wrapper{
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
 }
