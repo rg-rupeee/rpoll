@@ -1,6 +1,5 @@
 const Poll = require("./../model/pollModel");
 const { v4: uuid } = require("uuid");
-const { update } = require("./../model/pollModel");
 
 exports.createPoll = async (req, res) => {
 	try {

@@ -12,4 +12,8 @@ app.use(morgan("dev"));
 const apiRouter = require("./routes/apiRoutes");
 app.use("/api", apiRouter);
 
+app.use("/vote/:uuid", (req, res) => {
+  
+});
+
 module.exports = app;

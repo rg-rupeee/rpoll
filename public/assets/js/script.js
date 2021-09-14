@@ -57,4 +57,16 @@ document.querySelector(".btn-create-poll").addEventListener("click", (e) => {
 
 	console.log("hello");
 
+	axios
+		.post("/api", {
+			question,
+			options,
+		})
+		.then((res) => {
+			console.log(res.data.data);
+			location.href = `/vote/${res.data.data.uuid}`;
+		})
+		.catch((err) => {
+			console.log(err);
+		});
 });
