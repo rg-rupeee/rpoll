@@ -81,6 +81,18 @@ body {
   color: var(--tertiary);
 }
 
+.result-question{
+  color: var(--quaternary);
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.answer-options{
+  color: var(--quaternary);
+  font-weight: 500;
+  font-size: 32px;
+}
+
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .page-wrapper{
