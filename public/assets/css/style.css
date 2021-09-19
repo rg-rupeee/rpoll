@@ -52,6 +52,10 @@ body {
 	color: var(--quaternary);
 }
 
+.page-wrapper {
+  min-height: 70vh;
+}
+
 .form-heading {
 	font-weight: 700;
 }
@@ -153,6 +157,26 @@ a {
 .option-votes {
 	color: var(--quaternary);
 	font-weight: 500;
+}
+
+.vote-option{
+	background-color: var(--white);
+	border-radius: 10px;
+	font-weight: 500;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.submit-vote-btn{
+	width: 40%;
+	background-color: var(--tertiary);
+	color: var(--white);
+	font-weight: 600;
+}
+
+.submit-vote-btn:hover {
+	background-color: var(--secondary);
+	color: var(--primary);
 }
 
 /* // Large devices (desktops, 992px and up) */
