@@ -1,103 +1,164 @@
 :root {
-  --primary: #202020;
-  --secondary: #ffdf6c;
-  --tertiary: #3f3f3f;
-  --quaternary: #707070;
-  --white: #ffffff;
-  --whiteSec: #fafafa;
+	--primary: #202020;
+	--secondary: #ffdf6c;
+	--tertiary: #3f3f3f;
+	--quaternary: #707070;
+	--white: #ffffff;
+	--whiteSec: #fafafa;
 }
 
 ::-moz-selection {
-  /* Code for Firefox */
-  color: var(--white);
-  background: var(--quaternary);
+	/* Code for Firefox */
+	color: var(--white);
+	background: var(--quaternary);
 }
 
 ::selection {
-  color: var(--white);
-  background: var(--quaternary);
+	color: var(--white);
+	background: var(--quaternary);
 }
 
 body {
-  background-color: var(--whiteSec);
-  font-family: "Poppins", sans-serif;
+	background-color: var(--whiteSec);
+	font-family: "Poppins", sans-serif;
 }
 
 .main-header {
-  background-color: var(--primary);
-  padding-top: 12vh;
-  box-shadow: 3px 3px 5px var(--quaternary);
-  color: var(--white);
-  padding-bottom: 8vh;
+	background-color: var(--primary);
+	padding-top: 12vh;
+	box-shadow: 3px 3px 5px var(--quaternary);
+	color: var(--white);
+	padding-bottom: 8vh;
 }
 
 .main-title {
-  font-weight: 800;
-  color: var(--white);
+	font-weight: 800;
+	color: var(--white);
 }
 
 .main-btn {
-  background-color: var(--secondary);
-  color: var(--primary);
-  border: 1px solid var(--secondary);
-  font-weight: 600;
+	background-color: var(--secondary);
+	color: var(--primary);
+	border: 1px solid var(--secondary);
+	font-weight: 600;
 }
 
 .main-btn:hover {
-  border: 1px solid var(--quaternary);
-  color: var(--quaternary);
+	border: 1px solid var(--quaternary);
+	color: var(--quaternary);
 }
 
 .main-subtitle {
-  color: var(--quaternary);
+	color: var(--quaternary);
 }
 
-.form-heading{
-  font-weight: 700;
+.form-heading {
+	font-weight: 700;
 }
 
-.form-subtitle{
-  color: var(--quaternary);
+.form-subtitle {
+	color: var(--quaternary);
 }
 
-.form-label{
-  color: var(--quaternary);
-  font-weight: 500;
+.form-label {
+	color: var(--quaternary);
+	font-weight: 500;
 }
 
 .main-footer {
-  background-color: var(--quaternary);
+	background-color: var(--quaternary);
 }
 
 .github-icon {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .github-icon:hover {
-  background-color: var(--secondary);
+	background-color: var(--secondary);
 }
 
 .github-project {
-  color: var(--tertiary);
+	color: var(--tertiary);
 }
 
-.result-question{
-  color: var(--quaternary);
-  font-weight: 500;
-  font-size: 32px;
+.poll-result-header {
+	background-color: var(--primary);
+	box-shadow: 3px 3px 5px var(--quaternary);
+	color: var(--white);
 }
 
-.answer-options{
-  color: var(--quaternary);
-  font-weight: 500;
-  font-size: 32px;
+.result-question {
+	font-weight: 700;
+	font-size: 32px;
+}
+
+.answer-options {
+	color: var(--quaternary);
+	font-weight: 500;
+	font-size: 32px;
+}
+
+.vote-btn {
+	width: 100%;
+	background-color: var(--secondary);
+	color: var(--primary);
+	font-weight: 600;
+}
+
+.vote-btn:hover {
+	background-color: var(--tertiary);
+	color: var(--white);
+}
+
+.share-wrapper {
+	background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px var(--tertiary);
+}
+
+.share-subtitle {
+	font-weight: 700;
+	color: var(--quaternary);
+	font-size: 16px;
+}
+
+.votes {
+	font-weight: 700;
+	font-size: 44px;
+}
+
+.sharing-links {
+	font-weight: 500;
+	color: var(--tertiary);
+	font-size: 18px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.result-container {
+	background-color: var(--white);
+	border-radius: 10px;
+	box-shadow: 1px 1px 5px var(--quaternary);
+}
+
+.option-title {
+	color: var(--tertiary);
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.option-votes {
+	color: var(--quaternary);
+	font-weight: 500;
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .page-wrapper{
-    margin-left: 100px;
-    margin-right: 100px;
-  }
-  
+	.page-wrapper {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
 }

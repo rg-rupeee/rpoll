@@ -54,6 +54,10 @@ document.querySelector(".btn-create-poll").addEventListener("click", (e) => {
 		window.alert("Please specify atleast 2 options");
 		return;
 	}
+	if (options.length > 6) {
+		window.alert("Cannot have more than 6 options");
+		return;
+	}
 
 	console.log("hello");
 
