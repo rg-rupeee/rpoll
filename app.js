@@ -16,12 +16,12 @@ app.use(morgan("dev"));
 const apiRouter = require("./routes/apiRoutes");
 app.use("/api", apiRouter);
 
-app.use("/vote/:uuid", (req, res) => {
-	res.render("Poll");
-});
+const viewsController = require("./controller/viewsController");
 
-app.use("/result/:uuid", (req, res) => {
-	res.render("Poll");
-});
+app.use("/vote/:uuid", viewsController.votePage);
+
+app.use("/result/:uuid", viewsController.resultPage);
+
+app.use("/", viewsController.indexPage);
 
 module.exports = app;
