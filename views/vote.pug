@@ -1,0 +1,79 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // Bootstrap CSS
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x' crossorigin='anonymous')
+  // custom css
+  link(rel='stylesheet' href='/assets/css/style.css')
+  title RPoll | Submit Vote
+  // Google Fonts
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap' rel='stylesheet')
+header.container-fluid.p-0.m-0
+  .container-fluid.text-center.poll-result-header.p-3
+    h1.main-title.py-3 Submit your Vote
+#create-poll.container.page-wrapper.my-5.p-4
+  h1.result-question Which is the best IPL team ?
+  .row
+    .col-lg-8
+      .vote-container.py-4
+        .vote-option.p-4.my-2
+          input#vote-option-1.form-check-input(type='radio' name='vote-option')
+          label.form-check-label(for='vote-option-1')
+            | Chennai Super Kings
+        .vote-option.p-4.my-2
+          input#vote-option-2.form-check-input(type='radio' name='vote-option')
+          label.form-check-label(for='vote-option-2')
+            | Chennai Super Kings
+        .vote-option.p-4.my-2
+          input#vote-option-3.form-check-input(type='radio' name='vote-option')
+          label.form-check-label(for='vote-option-3')
+            | Chennai Super Kings
+        .vote-option.p-4.my-2
+          input#vote-option-4.form-check-input(type='radio' name='vote-option')
+          label.form-check-label(for='vote-option-4')
+            | Chennai Super Kings
+        .vote-option.p-4.my-2
+          input#vote-option-5.form-check-input(type='radio' name='vote-option')
+          label.form-check-label(for='vote-option-5')
+            | Chennai Super Kings
+      .submit-vote-btn.btn.p-3.my-2 Submit your Vote
+    .col-lg-4.my-5
+      .btn.vote-btn.p-3 See Result
+      .share-wrapper.p-3.my-3
+        .share.my-3
+          .share-subtitle.py-2 Share Poll
+          .sharing-links
+            a(href='#')
+              .share-link.my-2
+                i.bi.bi-share-fill.px-2.share-icons
+                |  Share Link
+            a(href='#')
+              .share-whatsapp.my-2
+                i.bi.bi-whatsapp.px-2.share-icons
+                |  Share on
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Whatsapp
+            a(href='#')
+              .share-facebook.my-2
+                i.bi.bi-facebook.px-2.share-icons
+                |  Share on
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Facebook
+            a(href='#')
+              .share-twitter.my-2
+                i.bi.bi-twitter.px-2.share-icons
+                |  Share on
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Twitter
+footer.container-fluid.m-0.main-footer.text-center.p-3
+  a(href='https://github.com/rg-rupeee')
+    img.github-icon(src='/assets/icons/github.svg' alt='' height='30px' width='30px')
+  .footer-title.pt-4.pb-0.fs-6
+    | This project is made by 
+    b  Rupesh Garhwal 
+  .footer-subtitle.p-0.fs-6
+    | checkout the source code
+    a.github-project(href='https://github.com/rg-rupeee/rpoll') here
+// Option 1: Bootstrap Bundle with Popper
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')
+link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css')

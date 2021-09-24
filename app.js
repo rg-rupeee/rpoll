@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 // view engine
-app.set("view engine", "ejs");
+app.set("view engine", "pug");
 app.set("views", "./views");
 
 app.use(morgan("dev"));
