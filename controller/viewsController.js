@@ -35,7 +35,8 @@ exports.votePage = async (req, res) => {
 				message: "No poll found with this id",
 			});
 		}
-		return res.render("vote");
+		console.log(poll);
+		return res.render("vote", { poll: poll });
 	} catch (err) {
 		console.log(err);
 		return res.json({

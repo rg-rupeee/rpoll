@@ -15,33 +15,19 @@ header.container-fluid.p-0.m-0
   .container-fluid.text-center.poll-result-header.p-3
     h1.main-title.py-3 Submit your Vote
 #create-poll.container.page-wrapper.my-5.p-4
-  h1.result-question Which is the best IPL team ?
+  h1.result-question= poll.question
   .row
     .col-lg-8
       .vote-container.py-4
-        .vote-option.p-4.my-2
-          input#vote-option-1.form-check-input(type='radio' name='vote-option')
-          label.form-check-label(for='vote-option-1')
-            | Chennai Super Kings
-        .vote-option.p-4.my-2
-          input#vote-option-2.form-check-input(type='radio' name='vote-option')
-          label.form-check-label(for='vote-option-2')
-            | Chennai Super Kings
-        .vote-option.p-4.my-2
-          input#vote-option-3.form-check-input(type='radio' name='vote-option')
-          label.form-check-label(for='vote-option-3')
-            | Chennai Super Kings
-        .vote-option.p-4.my-2
-          input#vote-option-4.form-check-input(type='radio' name='vote-option')
-          label.form-check-label(for='vote-option-4')
-            | Chennai Super Kings
-        .vote-option.p-4.my-2
-          input#vote-option-5.form-check-input(type='radio' name='vote-option')
-          label.form-check-label(for='vote-option-5')
-            | Chennai Super Kings
+         - for(i=0; i<poll.options.length; i++)
+          .vote-option.p-4.my-2
+            input#vote-option-1.form-check-input(type='radio' name='vote-option')
+            label.form-check-label(for='vote-option-1')
+              span.px-3= poll.options[i]
       .submit-vote-btn.btn.p-3.my-2 Submit your Vote
     .col-lg-4.my-5
-      .btn.vote-btn.p-3 See Result
+      a(href=`/result/${poll.uuid}`)
+        .btn.vote-btn.p-3 See Result
       .share-wrapper.p-3.my-3
         .share.my-3
           .share-subtitle.py-2 Share Poll
