@@ -15,16 +15,17 @@ header.container-fluid.p-0.m-0
   .container-fluid.text-center.poll-result-header.p-3
     h1.main-title.py-3 Submit your Vote
 #create-poll.container.page-wrapper.my-5.p-4
-  h1.result-question= poll.question
+  h1.result-question(data-uuid=`${poll.uuid}`)= poll.question
   .row
     .col-lg-8
-      .vote-container.py-4
-         - for(i=0; i<poll.options.length; i++)
-          .vote-option.p-4.my-2
-            input#vote-option-1.form-check-input(type='radio' name='vote-option')
-            label.form-check-label(for='vote-option-1')
-              span.px-3= poll.options[i]
-      .submit-vote-btn.btn.p-3.my-2 Submit your Vote
+      form
+        .vote-container.py-4
+          - for(i=0; i<poll.options.length; i++)
+            .vote-option.p-4.my-2
+              input.form-check-input(type='radio' name='vote-option' id=`vote-option-${i}` value=`${i}`)
+              label.form-check-label(for=`vote-option-${i}`)
+                span.px-3= poll.options[i]
+        button.submit-vote-btn.btn.p-3.my-2 Submit your Vote
     .col-lg-4.my-5
       a(href=`/result/${poll.uuid}`)
         .btn.vote-btn.p-3 See Result
@@ -35,7 +36,7 @@ header.container-fluid.p-0.m-0
             a(href='#')
               .share-link.my-2
                 i.bi.bi-share-fill.px-2.share-icons
-                |  Share Link
+                |  Copy Link to Clibboard
             a(href='#')
               .share-whatsapp.my-2
                 i.bi.bi-whatsapp.px-2.share-icons
@@ -59,7 +60,10 @@ footer.container-fluid.m-0.main-footer.text-center.p-3
     b  Rupesh Garhwal 
   .footer-subtitle.p-0.fs-6
     | checkout the source code
-    a.github-project(href='https://github.com/rg-rupeee/rpoll') here
+    a.github-project(href='https://github.com/rg-rupeee/rpoll') 
+    | here
 // Option 1: Bootstrap Bundle with Popper
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
+script(src='/assets/js/submitPoll.js')
 link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css')
